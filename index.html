@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="./styles.css">
+  <title>Schafkopfzähler
+  </title>
+</head>
+<body>
+  
+  <h1>Schafkopfzähler</h1>
+
+  <table>
+    <thead>
+      <tr id="nameRow">
+        <th class="Tabellenkopf" id="nameColumn1" ></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr id="scoreRow">
+        <td class="Tabelleninhalt" id="scoreColumn1"></td>
+      </tr>
+
+    </tbody>
+  </table>
+
+
+  <div class="modal" id="newGame-modal">
+    <div class="modal-inner">
+      <div class="modal-head">
+        <h3>Welches Spiel wurde gespielt</h3>
+        <button class="closeModalButton" id="newGame-modal-closebutton"> x </button>
+        </div>
+        <div class="modal-body">
+          <div id="spielartcontainer">
+            <div>
+              <input type="radio" name="spielart" id="sauspielCheckbox" checked>
+              <Label for="sauspielCheckbox">Sauspiel</Label>
+            </div>
+            <div>
+              <input type="radio" name="spielart" id="soloCheckbox">
+              <Label for="soloCheckbox">Solo</Label>
+            </div>
+            <div>
+              <input type="radio" name="spielart" id="wenzCheckbox" >
+              <Label for="wenzCheckbox">Wenz</Label>
+            </div>
+            <div>
+              <input type="radio" name="spielart" id="ramschCheckbox" >
+              <Label for="ramschCheckbox">Ramsch</Label>
+            </div>
+            <br>
+          </div>
+          <div>
+            <div id="anzahlLaufendeContainer">Anzahl Laufende
+              <input type="number" name="" id="laufendeZähler" value="0" min="0" max="14">
+              <br>
+            </div>
+  
+            <div id="anzahlJungfrauenContainer" hidden >Anzahl Jungfrauen
+              <input type="number" name="" id="jungfrauenZähler" value="0" min="0" max="2">
+              <br>
+            </div>
+  
+            <div>Tarifmultiplikator
+              <input type="number" name="" id="tarifZähler" value="1" min="1" max="99">
+            </div>
+            <div>Wie oft wurde gelegt?
+              <input type="number" name="" id="gelegtZähler" value="0" min="0" max="4">
+            </div>
+            <br>
+          </div>
+      
+          <div id="schneiderSchwarzContainer" >Schneider oder Schwarz?
+            <div>
+              <input type="radio" name="schneiderSchwarz" id="normalCheckbox" checked>
+              <Label for="normalCheckbox">normal</Label>
+            </div>
+            <div>
+              <input type="radio" name="schneiderSchwarz" id="schneiderCheckbox">
+              <Label for="schneiderCheckbox">schneider</Label>
+            </div>
+            <div>
+              <input type="radio" name="schneiderSchwarz" id="schwarzCheckbox">
+              <Label for="schwarzCheckbox">schwarz</Label>
+            </div>
+          </div>
+
+          
+          <br>
+          <button id="newGame-fertigbutton"> Fertig </button>
+        </div>
+    </div>
+
+    
+  
+  </div>
+  
+  <div class="modal" id="settingWinner-modal">
+    
+    <div class="modal-inner">
+      
+      <div class="modal-head">
+
+        <h3>Spielausgang</h3>
+        <button class="closeModalButton" id="settingWinner-modal-closebutton"> x </button>
+        
+      </div>
+      <div class="modal-body" id="settingWinnerContainer">
+          <div id="winnerOptions">Wer hat gewonnen?
+            <div id="winnerOption1">
+              <input type="checkbox" name="Winner" id="spieler1WinnerCheckbox">
+              <label for="spieler1WinnerCheckbox" id="winnerLabel1"></label>
+            </div>
+          </div>
+          <div id="loserOptions">Wer hat verloren?
+            <div id="loserOption1">
+              <input type="checkbox" name="Loser" id="spieler1LoserCheckbox">
+              <label for="spieler1LoserCheckbox" id="loserLabel1"></label>
+            </div>
+          </div>
+          <button id="settingWinner-fertigbutton"> Fertig </button>
+      </div>
+    </div>
+  </div>
+
+    <div class="modal" id="stats-modal">
+      <div class="modal-inner">
+        <div class="modal-head">
+          <h3>Statistiken</h3>
+          <button class="closeModalButton" id="stats-modal-closebutton"> x </button>
+        </div>
+        <div class="modal-body" id="statsContainer">
+          <h4>Anzahl Spiele:</h4>
+          <p id="totalGamesplayedParagraph"></p>
+          <p id="SauspielplayedParagraph"></p>
+          <p id="WenzplayedParagraph"></p>
+          <p id="SoloplayedParagraph"></p>
+          <p id="RamschplayedParagraph"></p>
+          </table>
+          <button onclick="resetStats()" id="reset-counts-button"> Statistiken löschen</button>
+        </div>
+      </div>
+    </div>
+
+  <button id="newGame-modal-openbutton" >Füge spiel hinzu</button>
+  <button onclick="resetSpielstände()" id="reset-spielstände-button"> Spielstände zurücksetzen</button>
+  <button id="stats-modal-openbutton"> Statistiken </button>
+  <p id="lastGameP"></p>
+  
+
+  <script src="./index.js"></script>
+</body>
+</html>
+
